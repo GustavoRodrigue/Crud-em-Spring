@@ -23,4 +23,6 @@ public class GreetingsController {
     public String greetingText(@PathVariable String name) {
         return "Curso APi " + name + "!";
     }
+    
+   
 }

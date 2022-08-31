@@ -96,4 +96,15 @@ public class GreetingsController {
     	return new ResponseEntity<Usuario>(user, HttpStatus.OK);
     	
     }
+    
+    @GetMapping(value = "buscarPorNome") /*mapeia a url*/
+    @ResponseBody /* descrição da resposta*/
+    public ResponseEntity<List<Usuario>> buscarPorNome (@RequestParam(name="name") String name){ /*recebe os dados para consultar*/
+    	
+    	List<Usuario> usuario =  usuarioRepository.BuscaPorNome(name.trim().toUpperCase());
+    	
+    	return new ResponseEntity<List<Usuario>>(usuario, HttpStatus.OK);
+    	
+    }
+   
 }
